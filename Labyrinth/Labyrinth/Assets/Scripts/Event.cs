@@ -11,6 +11,11 @@ public class Event : MonoBehaviour
     public GameObject t4;
     public GameObject t5;
     public GameObject t6;
+    public GameObject boss;
+    
+    public GameObject finalpoint;
+    public GameObject finalscreen;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,53 +33,84 @@ public class Event : MonoBehaviour
     void Update()
     {
      
-
+ if (boss == null){
+         Debug.Log("boss is killed, now go back to start point");
+         finalpoint.SetActive(true);
+    }
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "startPoint")
         {
 
-        t1.SetActive(true);
         t0.SetActive(false);
+        t1.SetActive(true);
+        t2.SetActive(false);
+        t3.SetActive(false);
+        t4.SetActive(false);
+        t5.SetActive(false);
+        t6.SetActive(false);
 
         }
 
         if(other.gameObject.tag == "e1")
         {
-
+        t0.SetActive(false);
         t2.SetActive(true);
         t1.SetActive(false);
+        t3.SetActive(false);
+        t4.SetActive(false);
+        t5.SetActive(false);
+        t6.SetActive(false);
 
         }
         if(other.gameObject.tag == "e2")
         {
 
+        t0.SetActive(false);
         t3.SetActive(true);
         t2.SetActive(false);
+        t1.SetActive(false);
+        t4.SetActive(false);
+        t5.SetActive(false);
+        t6.SetActive(false);
 
         }
         if(other.gameObject.tag == "e3")
         {
 
+        t0.SetActive(false);
         t4.SetActive(true);
+        t2.SetActive(false);
         t3.SetActive(false);
-
+        t1.SetActive(false);
+        t5.SetActive(false);
+        t6.SetActive(false);
         }
 
         if(other.gameObject.tag == "e4")
         {
 
+        t0.SetActive(false);
         t5.SetActive(true);
+        t2.SetActive(false);
+        t3.SetActive(false);
         t4.SetActive(false);
+        t1.SetActive(false);
+        t6.SetActive(false);
 
         }
        
         if(other.gameObject.tag == "e5")
         {
 
+        t0.SetActive(false);
         t6.SetActive(true);
+        t2.SetActive(false);
+        t3.SetActive(false);
+        t4.SetActive(false);
         t5.SetActive(false);
+        t1.SetActive(false);
 
         }
 
@@ -82,14 +118,29 @@ public class Event : MonoBehaviour
 
         {
 
+
+        t2.SetActive(false);
+        t3.SetActive(false);
+        t4.SetActive(false);
+        t5.SetActive(false);
         t6.SetActive(false);
         
-
         }
 
+        if(other.gameObject.tag == "finishPoint" && boss == null)
+
+        {
+
+        finalscreen.SetActive(true);
+        FindObjectOfType<GameManager>().EndGame();
         
+        }
+
 
     }
+
+
+    
 
     
 }
