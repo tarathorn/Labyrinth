@@ -27,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(currentHealth <= 0){
         Destroy(EnemyBody);
+        EnemyIsDead();
         }
 
     }
@@ -36,5 +37,20 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
 
     }
+
+    public void EnemyIsDead()
+    {
+
+    Debug.Log("this enemy is: " + gameObject.name);
+        if(gameObject.name == "Boss"){
+        FindObjectOfType<Event>().BossDead();
+     
+
+     }
+
+     else{
+
+     }
     
+    }
 }

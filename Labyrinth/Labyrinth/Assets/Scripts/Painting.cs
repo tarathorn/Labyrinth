@@ -24,7 +24,6 @@ public class Painting : MonoBehaviour
     {
       player.transform.position = Painter.transform.position;
       Painter.transform.Translate(new Vector3 (0,0,0));
-      Debug.Log("player start position is: " + Painter.transform.position);
       LastPosition = Painter.transform.position;
 
 
@@ -41,9 +40,7 @@ public class Painting : MonoBehaviour
        { 
         isMoving = true;
         
-        Debug.Log("player position is: " + Painter.transform.position);
         theTrail = Instantiate(drawPrefab, Painter.transform.position, Quaternion.identity);
-        Debug.Log("Bush location: " + drawPrefab.transform.position); 
        
        }
 

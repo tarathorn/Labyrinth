@@ -15,6 +15,7 @@ public class Event : MonoBehaviour
     
     public GameObject finalpoint;
     public GameObject finalscreen;
+    public bool bossIsDead;
 
 
     // Start is called before the first frame update
@@ -26,6 +27,8 @@ public class Event : MonoBehaviour
      t4.SetActive(false);
      t5.SetActive(false);
      t6.SetActive(false);
+     finalscreen.SetActive(false);
+     finalpoint.SetActive(false);
     
     }
 
@@ -33,10 +36,7 @@ public class Event : MonoBehaviour
     void Update()
     {
      
- if (boss == null){
-         Debug.Log("boss is killed, now go back to start point");
-         finalpoint.SetActive(true);
-    }
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -50,6 +50,7 @@ public class Event : MonoBehaviour
         t4.SetActive(false);
         t5.SetActive(false);
         t6.SetActive(false);
+        Destroy(GameObject.FindWithTag("startPoint"));
 
         }
 
@@ -62,6 +63,7 @@ public class Event : MonoBehaviour
         t4.SetActive(false);
         t5.SetActive(false);
         t6.SetActive(false);
+        Destroy(GameObject.FindWithTag("e1"));
 
         }
         if(other.gameObject.tag == "e2")
@@ -74,6 +76,7 @@ public class Event : MonoBehaviour
         t4.SetActive(false);
         t5.SetActive(false);
         t6.SetActive(false);
+        Destroy(GameObject.FindWithTag("e2"));
 
         }
         if(other.gameObject.tag == "e3")
@@ -86,6 +89,8 @@ public class Event : MonoBehaviour
         t1.SetActive(false);
         t5.SetActive(false);
         t6.SetActive(false);
+        Destroy(GameObject.FindWithTag("e3"));
+
         }
 
         if(other.gameObject.tag == "e4")
@@ -98,6 +103,7 @@ public class Event : MonoBehaviour
         t4.SetActive(false);
         t1.SetActive(false);
         t6.SetActive(false);
+        Destroy(GameObject.FindWithTag("e4"));
 
         }
        
@@ -111,6 +117,7 @@ public class Event : MonoBehaviour
         t4.SetActive(false);
         t5.SetActive(false);
         t1.SetActive(false);
+        Destroy(GameObject.FindWithTag("e5"));
 
         }
 
@@ -124,19 +131,26 @@ public class Event : MonoBehaviour
         t4.SetActive(false);
         t5.SetActive(false);
         t6.SetActive(false);
+        Destroy(GameObject.FindWithTag("e6"));
         
         }
+        if(other.gameObject.tag == "finishPoint"){
+            
+            finalscreen.SetActive(true);
+            FindObjectOfType<GameManager>().EndGame();
+            
 
-        if(other.gameObject.tag == "finishPoint" && boss == null)
-
-        {
-
-        finalscreen.SetActive(true);
-        FindObjectOfType<GameManager>().EndGame();
-        
         }
 
+        
 
+
+    }
+
+    public void BossDead(){
+
+        Debug.Log("Boss is dead");
+        finalpoint.SetActive(true);
     }
 
 

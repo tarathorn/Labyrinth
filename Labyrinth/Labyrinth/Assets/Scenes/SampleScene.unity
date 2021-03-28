@@ -5691,7 +5691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1035762325
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6677,7 +6677,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 56523320961497a40b84e2446c970e7f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -33
+      value: -32.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 56523320961497a40b84e2446c970e7f,
         type: 3}
@@ -7284,6 +7284,7 @@ MonoBehaviour:
   boss: {fileID: 2878202389460960922}
   finalpoint: {fileID: 7628787}
   finalscreen: {fileID: 1035762324}
+  bossIsDead: 0
 --- !u!1001 &1344282950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11973,7 +11974,7 @@ GameObject:
   - component: {fileID: 2878202389460960924}
   m_Layer: 0
   m_Name: AI_Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12515,10 +12516,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 4502874412182233482, guid: b2727bec09f5be645baed01b4d3d69de,
+        type: 3}
+      propertyPath: damageToGive
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662677626191175042, guid: b2727bec09f5be645baed01b4d3d69de,
+        type: 3}
+      propertyPath: EnemyBody
+      value: 
+      objectReference: {fileID: 2878202389460960922}
     - target: {fileID: 6662677626191175042, guid: b2727bec09f5be645baed01b4d3d69de,
         type: 3}
       propertyPath: maxHealth
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2727bec09f5be645baed01b4d3d69de, type: 3}
