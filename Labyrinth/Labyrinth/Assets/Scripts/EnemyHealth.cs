@@ -44,6 +44,7 @@ public class EnemyHealth : MonoBehaviour
     Debug.Log("this enemy is: " + gameObject.name);
         if(gameObject.name == "Boss"){
         FindObjectOfType<Event>().BossDead();
+        
      
 
      }

@@ -137,7 +137,7 @@ public class Event : MonoBehaviour
         if(other.gameObject.tag == "finishPoint"){
             
             finalscreen.SetActive(true);
-            FindObjectOfType<GameManager>().EndGame();
+            FindObjectOfType<GameManager>().WonGame();
             
 
         }
@@ -149,6 +149,7 @@ public class Event : MonoBehaviour
 
     public void BossDead(){
 
+        t6.SetActive(true);
         Debug.Log("Boss is dead");
         finalpoint.SetActive(true);
     }

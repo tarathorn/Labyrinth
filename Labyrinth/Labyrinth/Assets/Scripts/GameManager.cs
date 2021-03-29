@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void WonGame()
+    {
+        Invoke("Restart", 10f);
+    }
+
     public void Restart()
     {
         SceneManager.LoadScene("SampleScene");
